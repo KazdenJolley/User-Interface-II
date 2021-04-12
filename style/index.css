@@ -14,7 +14,6 @@ menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
 	padding: 0;
-	border: 0;
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
@@ -26,9 +25,13 @@ footer, header, hgroup, menu, nav, section {
 }
 
 /* Basic styling */
+*{
+    box-sizing: border-box;
+    max-width: 100%;
+}
 html{
     font-size: 62.5%;
-    max-width: 100%
+    max-width: 100%;
 }
 body{
     font-size:1.8rem;
@@ -157,6 +160,9 @@ footer h2{
     flex-direction: column;
     align-items: center;
 }
+footer h2{
+    text-align: center;
+}
 .social nav{
     display: flex;
     justify-content: space-evenly;
@@ -166,4 +172,74 @@ footer h2{
 }
 .social img{
     width:100%;
+}
+
+/*Responsive Styling*/
+/*Tablet*/
+@media(max-width:800px){
+    /*header*/
+    header{
+        display:flex;
+        flex-direction: column;
+        align-items:center;
+    }
+    header nav{
+        width: 50%;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+    }
+    /*top*/
+    .top img{
+        width: 35%;
+        height: 35vh;
+        margin: auto;
+    }
+    .top a{
+        font-size: 2rem;
+    }
+    .top p{
+        padding: 1%;
+        font-size: 1.6rem;
+    }
+    /*projects*/
+    .projects div{
+        width: 32%;
+    }
+}
+/*Mobile*/
+@media(max-width:500px){
+    /*header*/
+    header{
+        padding: 3%;
+    }
+    header nav{
+        flex-direction: column;
+        align-items: center;
+    }
+    header nav a{
+        text-align: center;
+        width: 40%;
+        margin: 0;
+    }
+    /*Top*/
+    .top{
+        flex-direction: column;
+        align-items: center;
+    }
+    .top img{
+        width:50%;
+        height: 30vh;
+    }
+    /*Projects*/
+    .projects div{
+        width: 45%;
+    }
+    /*Footer*/
+    .social{
+        display: none;
+    }
+    .contact{
+        width: 95%;
+    }
 }
